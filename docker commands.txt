@@ -4,4 +4,6 @@ docker run: create container using the image we specified then spin up the conta
 HelloWorld:
 docker run busybox:1.30 echo "hello world"
 
-docker build -t mt26691/debian-test .
+docker build -t mt26691 .
+
+docker run -it mt26691
