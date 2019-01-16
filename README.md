@@ -6,6 +6,6 @@ docker run: create container using the image we specified then spin up the conta
 HelloWorld:
 docker run busybox:1.30 echo "hello world"
 
-docker build -t mt26691/debian-test .
+docker build -t dockerapp:v0.4 .
 
-docker run -d -p 5000:5000 [imageId] => make it run on port 5000
+docker run -d -p 5000:5000 --link redis dockerapp:v0.4 => make it run on port 5000
