@@ -3,8 +3,8 @@ import redis
 
 app = Flask(__name__)
 default_key = '1'
-cache = redis.Redis(host='redis', port=6379, db=0)
-cache.set(default_key,"one")
+cache = redis.StrictRedis(host='redis', port=6379, db=0)
+cache.set(default_key, "one")
 
 @app.route('/', methods=['GET', 'POST'])
 def mainpage():
@@ -14,7 +14,7 @@ def mainpage():
 	    key = request.form['key']
 
 	if request.method == 'POST' and request.form['submit'] == 'save':
-		cache.set(key,request.form['cache_value'])
+		cache.set(key, request.form['cache_value'])
 
 	cache_value = None;
 	if cache.get(key):
