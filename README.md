@@ -17,3 +17,7 @@ docker run -d --net none busybox sleep 1000
 
 DOCKER host network:
 docker run -d  --name container_4 --net host busybox sleep 1000
+
+
+TEST
+docker-compose run dockerapp python test.py
