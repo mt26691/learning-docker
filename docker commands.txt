@@ -7,3 +7,27 @@ docker run busybox:1.30 echo "hello world"
 docker build -t mt26691 .
 
 docker run -it mt26691
+
+
+docker container rm --force bb
+
+
+docker image build -t bulletinboard:1.0 .
+
+docker container run --publish 8000:8080 --detach --name bb bulletinboard:1.0
+
+docker run busybox:1.24 ls /
+
+-i => get inside container
+docker run -i -t busybox:1.24 
+
+running in the background:
+docker run -d busybox:1.24 sleep 10000
+
+running container:
+docker ps
+
+all containers:
+docker ps - a
+
+docker build -t mt26691/debian-test .
