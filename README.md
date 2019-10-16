@@ -7,3 +7,5 @@ HelloWorld:
 docker run busybox:1.30 echo "hello world"
 
 docker build -t mt26691/debian-test .
+
+docker run -d -p 5000:5000 --link redis dockerapp:v0.3
